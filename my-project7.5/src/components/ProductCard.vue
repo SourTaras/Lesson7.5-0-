@@ -43,11 +43,7 @@ export default{
     height: 200px;
     object-fit: cover;
 }
-.price{
-    font-size: 18px;
-    font-weight: bold;
-    color: #28a745;
-}
+
 .buy-button{
     background-color: #007bff;
     color: #fff;
@@ -59,6 +55,5 @@ export default{
     margin-bottom: 20px;
 
 }
-.buy-button: hover{
-    backgorund-color: #0056b3
-}
+
+</style>
