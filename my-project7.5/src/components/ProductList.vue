@@ -57,6 +57,11 @@ image: "https://img.freepik.com/free-photo/landscape-nature-scene-tv-appliance-g
 name: "Фітнес-браслет Xiaomi Mi Band 7",
 price: 1800,
 image: "https://img.freepik.com/free-photo/futuristic-virtual-reality-headset-illuminates-dark-studio-shot-generated-by-ai_188544-13298.jpg"
+},
+{
+name: "Iphone",
+price: 15000,
+image: "https://www.freepik.com/free-photo/top-view-smartphone-template-workspace_4652072.htm#fromView=search&page=1&position=13&uuid=b5def53a-5e83-45ce-8374-09582b778eb7&query=iphone"
 }
 ],
 };

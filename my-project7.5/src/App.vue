@@ -6,16 +6,19 @@
 <ProductList/> 
 
 </div>
+<FooterComponent email="example@mail.com" phone="+38009768342" />
 </template>
 <script>
 import HeaderComponent from "./components/Header.vue"
 import MessageComponent from "./components/MessageComponent.vue"
 import ProductList from "./components/ProductList.vue"
+import FooterComponent from "./components/FooterComponent.vue"
 export default{
   components: {
     HeaderComponent,
     MessageComponent,
-    ProductList
+    ProductList,
+    FooterComponent
   }
 }
 </script>
