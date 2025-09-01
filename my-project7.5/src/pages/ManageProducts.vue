@@ -73,3 +73,18 @@ computed: {
 },
 };
 </script>
+<style scoped>
+input{
+    width:30vw;
+    height: 4vh;
+    color: black;
+    background-color: white;
+    border: 2px solid grey;
+    margin: 0 auto;
+
+}
+h2{
+    text-align:center;
+    text-weight: bold
+}
+</style>
