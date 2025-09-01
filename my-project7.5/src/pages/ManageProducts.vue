@@ -1,15 +1,28 @@
 <template>
 <h2>Пошук товарів</h2>
 <input v-model="searchQuery" placeholder="Введіть назву товару" />
+<ManageCart />
 <div>
 <ProductList :products="filteredProducts" />
 </div>
 </template>
 <script>
+import { ref,computed,provide } from "vue"
+import ManageCart from "../components/ManageCart.vue"
 import ProductList from '../components/ProductList.vue'
 export default {
     components: {
         ProductList,
+        ManageCart
+    },
+    setUp(){
+        const searchQuery = ref("");
+        const cartItems = ref([]);
+        const products = ref([
+            {Товар 1},
+            {Товар 2},
+            {Товар 3}
+        ]);
     },
 data() {
 return {
