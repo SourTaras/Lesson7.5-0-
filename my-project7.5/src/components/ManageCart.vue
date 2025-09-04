@@ -1,15 +1,15 @@
 <template>
 <div>
 <h2>Кошик покупок</h2>
-<p v-if="cart.length === 0>Кошик порожній</p>
+<p v-if="cart.length === 0">Кошик порожній</p>
 <ul>
 <li v-for="(item,index) in cartItems" :key="index">
-<img :src="item.image" :alt="item.name" width=50" />
+<img :src="item.image" :alt="item.name" width="50" />
 {{ item.name }} - {{ item.price }} грн
-<button @click="removeItem(index)>Видалити</button>
+<button @click="removeItem(index)">Видалити</button>
 </li>
 </ul>
-<p v-if="cart.length > 0">Загальна сума : {{ totalPrice }}
+<p v-if="cart.length > 0">Загальна сума : {{ totalPrice }}</p>
 </div>
 </template>
 <script>

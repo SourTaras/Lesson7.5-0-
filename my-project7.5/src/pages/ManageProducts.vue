@@ -15,20 +15,10 @@ export default {
         ProductList,
         ManageCart
     },
-    setUp(){
+    setup(){
         const searchQuery = ref("");
         const cartItems = ref([]);
-        const products = ref([
-            {Товар 1},
-            {Товар 2},
-            {Товар 3}
-        ]);
-    },
-data() {
-return {
-    searchQuery:"",
-products: [
-{
+        const products = ref([{
 name: "Смартфон Samsung Galaxy S23",
 price: 35000,
 image: "https://img.freepik.com/free-photo/white-cell-phone-box-background_58702-4721.jpg"
@@ -72,18 +62,35 @@ image: "https://img.freepik.com/free-photo/futuristic-virtual-reality-headset-il
 name: "Iphone",
 price: 15000,
 image: "https://www.freepik.com/free-photo/top-view-smartphone-template-workspace_4652072.htm#fromView=search&page=1&position=13&uuid=b5def53a-5e83-45ce-8374-09582b778eb7&query=iphone"
-}
-],
-};
-},
-computed: {
-    filteredProducts: function() {
-        return this.products.filter(function (product){
-            return product.name.toLowerCase().includes(this.searchQuery.toLowerCase())
-        }.bind(this)
-        )
-    }
-},
+}]);
+        const filteredProducts = computed(function() {
+            return products.value.filter(function(product){
+                return product.name.toLowerCase().includes(searchQuery.value.toLowerCase());
+            });
+        });
+        const totalPrice = computed(function(){
+            return cartItems.value.reduce(function(sum,item){
+                return sum + item.price;
+            }, 0)
+        });
+        function addToCart(product){
+            cartItems.value.push(product);
+        }
+        function removeItem(index) {
+            cartItems.value.splice(index, 1)
+        }
+        provide("cartItems", cartItems)
+        provide("totalPrice", totalPrice)
+        provide("addToCart", addToCart)
+        provide("removeItem", removeItem)
+        return {
+            searchQuery,
+            products,
+            filteredProducts
+        }
+    },
+
+
 };
 </script>
 <style scoped>

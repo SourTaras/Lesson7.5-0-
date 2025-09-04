@@ -4,10 +4,11 @@
 <h2>{{ name }}</h2>
 <p>{{ description }}</p>
 <p>{{ price }}</p>
-<button class="buy-button">Купити</button>
+<button v-on:click="addToCart" class="buy-button">Купити</button>
 </div>
 </template>
 <script>
+import { inject } from "vue"
 export default{
     name: "ProductCardComponent",
     props: {
@@ -27,7 +28,19 @@ export default{
             type: String,
             required: true
         }
-    }
+    },
+    setup(props) {
+        const addToCart = inject("addToCart");
+        function handleAddToCart() {
+            addToCart({
+                name: props.name,
+                price: props.price,
+                image: props.image,
+            });
+
+        }
+        return { addToCart: handleAddToCart };
+    },
 }
 </script>
 <style scoped>
