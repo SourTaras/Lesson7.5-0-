@@ -28,6 +28,23 @@ export default {
             console.error("Помилка завантаження JSON: " + error);
             this.message = "Помилка сервера! Спробуйте пізніше";
         }
+    },
+    methods: {
+        login: function () {
+            if(!this.username || !this.password) {
+                this.message("Введіть логін та пароль")
+                return
+            }
+            const user = this.users.find(function(u) {
+                return u.username == this.username && u.password == this.password
+            }.bind(this));
+            if(user) {
+                localStorage.setItem("authUser", this.username);
+                this.$router.push("/profile")
+            } else {
+                this.message = "Невірний логін або пароль "
+            }
+        }
     }
 }
 </script>

@@ -3,6 +3,7 @@
 <nav class="sidebar">
 <router-link to="/admin/products" class="nav-link">Головна</router-link>
 <router-link to="/admin/reviews" class="nav-link">Відгуки</router-link>
+<router-link to="/admin/login" class="nav-link">Особистий кабінет</router-link>
 </nav>
 <main class="main-content">
 <router-view > </router-view>
